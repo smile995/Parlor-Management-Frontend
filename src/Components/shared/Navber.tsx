@@ -51,7 +51,7 @@ const Navber = () => {
       <AppBar
         style={{ backgroundColor: "#fff8f5" }}
         elevation={0}
-        position="static"
+        position="fixed"
       >
         <Container maxWidth="xl">
           <Toolbar disableGutters>
