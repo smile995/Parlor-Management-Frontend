@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+
+.active{
+     /* background-color: #f63e7b; */
+     
+     text-decoration: underline;
+     text-decoration-color: #f63e7b;
+     text-decoration-thickness: 3px;
+   
+}
