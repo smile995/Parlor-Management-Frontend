@@ -20,7 +20,10 @@ const Navber = () => {
 
   const PublicPage = [
     { label: "Home", link: "" },
-    { label: "Our Portfolio", link: "our-portfolio" },
+    { label: "Services", link: "services" },
+    { label: "Packages", link: "packages" },
+    { label: "Offers", link: "offers" },
+    { label: "Blogs", link: "blogs" },
     { label: "Our Team", link: "our-team" },
     { label: "Contact Us", link: "contact-us" },
   ];
@@ -80,7 +83,7 @@ const Navber = () => {
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
                 onClick={handleOpenNavMenu}
-                color="inherit"
+                color="primary"
               >
                 <MenuIcon />
               </IconButton>
