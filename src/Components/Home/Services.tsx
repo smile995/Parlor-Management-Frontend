@@ -1,3 +1,6 @@
+import { services } from "../../DummyData/Services";
+import ServiceCard from "../shared/ServiceCard";
+
 const Services = () => {
   return (
     <div className="bg-white py-5">
@@ -5,6 +8,11 @@ const Services = () => {
         <h1 className="md:text-3xl text-2xl font-bold text-black text-center">
           Our Awesome <span className="text-[#f63e7b]">Services</span>
         </h1>
+      </div>
+      <div className="flex overflow-x-auto gap-5 px-5 my-3">
+        {services.map((service) => (
+          <ServiceCard key={service._id} service={service} />
+        ))}
       </div>
     </div>
   );

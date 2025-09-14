@@ -1,6 +1,6 @@
 export const services = [
   {
-    _id: 1,
+    _id: "1",
     name: "Face Wash",
     description: "Refreshing deep cleansing face wash for glowing skin.",
     category: "Facial",
@@ -18,7 +18,26 @@ export const services = [
     status: "active"
   },
   {
-    _id: 2,
+    _id:" 2",
+    name: "Skin Treatment",
+    description: "Advanced treatment for clear, radiant, and healthy skin.",
+    category: "Skin",
+    price: 1500,
+    discount: 15,
+    duration: "1 hr",
+    image: "https://sparshskinent.com/wp-content/uploads/2024/09/bridal-treatment.jpg",
+    rating: 4.9,
+    totalOrder: 120,
+    products: ["Vitamin C Serum", "Hydrating Mask", "Sunscreen"],
+    benefits: ["Reduces dark spots", "Improves skin tone", "Hydrates deeply"],
+    availableStaff: ["Sadia", "Lamia"],
+    slots: ["11:00 AM", "1:00 PM", "3:30 PM", "6:00 PM"],
+    preparation: "Do not apply cream/lotion before service.",
+    status: "active"
+  },
+  
+  {
+    _id:" 2",
     name: "Skin Treatment",
     description: "Advanced treatment for clear, radiant, and healthy skin.",
     category: "Skin",
@@ -36,7 +55,7 @@ export const services = [
     status: "active"
   },
   {
-    _id: 3,
+    _id: "3",
     name: "Hair Spa",
     description: "Nourishing hair spa for shiny and strong hair.",
     category: "Hair",

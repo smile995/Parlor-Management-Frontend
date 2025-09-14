@@ -27,7 +27,7 @@ const Navber = () => {
     { label: "Our Team", link: "our-team" },
     { label: "Contact Us", link: "contact-us" },
   ];
-  const settings = ["Profile", "Account", "Dashboard", "Logout"];
+  const settings = ["Dashboard", "Logout"];
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
@@ -130,7 +130,7 @@ const Navber = () => {
                 textDecoration: "none",
               }}
             >
-              <img className="w-1/2 " src={logo} />
+              <img className="w-1/3 " src={logo} />
             </Typography>
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
               {PublicPage.map((page, index) => (
