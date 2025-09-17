@@ -4,9 +4,9 @@ import ReviewCard from "./ReviewCard";
 
 const Testimonials = () => {
   return (
-    <div className="bg-white py-5">
+    <div className="bg-white py-10">
       <div>
-        <h1 className="py-4 text-black text-center md:text-4xl text-2xl font-bold">Testimonials</h1>
+        <h1 className="pb-4 text-black text-center md:text-4xl text-2xl font-bold">Testimonials</h1>
       </div>
       <div>
         <Marquee  pauseOnHover={true} speed={50}>
