@@ -9,7 +9,7 @@ const Services = () => {
           Our Awesome <span className="text-[#f63e7b]">Services</span>
         </h1>
       </div>
-      <div className="flex overflow-x-auto gap-5 px-5 my-3">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 mx-auto p-5 gap-5 my-3">
         {services.map((service) => (
           <ServiceCard key={service._id} service={service} />
         ))}

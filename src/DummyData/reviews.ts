@@ -2,7 +2,7 @@ export const clientReviews = [
   {
     _id: "rev_1",
     customerName: "Ayesha Rahman",
-    customerImage: "/images/customers/ayesha.jpg",
+    customerImage: "https://png.pngtree.com/png-clipart/20200819/ourlarge/pngtree-female-profile-avatar-elements-png-image_2326125.jpg",
     profession: "University Student",
     rating: 5,
     comment: "Amazing experience! My hair feels soft and shiny. Staff were very professional.",
@@ -11,7 +11,7 @@ export const clientReviews = [
   {
     _id: "rev_2",
     customerName: "Nusrat Jahan",
-    customerImage: "/images/customers/nusrat.jpg",
+    customerImage: "https://png.pngtree.com/png-clipart/20200819/ourlarge/pngtree-female-profile-avatar-elements-png-image_2326125.jpg",
     profession: "Bank Officer",
     rating: 4,
     comment: "Very relaxing pedicure. The environment was soothing. Could improve waiting time.",
@@ -20,7 +20,7 @@ export const clientReviews = [
   {
     _id: "rev_3",
     customerName: "Mehedi Hasan",
-    customerImage: "/images/customers/mehedi.jpg",
+    customerImage: "https://png.pngtree.com/png-clipart/20230927/original/pngtree-man-avatar-image-for-profile-png-image_13001882.png",
     profession: "Software Engineer",
     rating: 5,
     comment: "Best facial I’ve ever had. My skin feels fresh and glowing!",
@@ -29,7 +29,7 @@ export const clientReviews = [
   {
     _id: "rev_4",
     customerName: "Rifat Akter",
-    customerImage: "/images/customers/rifat.jpg",
+    customerImage: "https://png.pngtree.com/png-clipart/20200819/ourlarge/pngtree-female-profile-avatar-elements-png-image_2326125.jpg",
     profession: "School Teacher",
     rating: 3,
     comment: "Service was good, but I expected more detailed consultation before treatment.",
@@ -38,7 +38,7 @@ export const clientReviews = [
   {
     _id: "rev_5",
     customerName: "Tanvir Alam",
-    customerImage: "/images/customers/tanvir.jpg",
+    customerImage: "https://png.pngtree.com/png-clipart/20230927/original/pngtree-man-avatar-image-for-profile-png-image_13001882.png",
     profession: "Businessman",
     rating: 4,
     comment: "Nice haircut, exactly as I wanted. Staff was friendly.",
