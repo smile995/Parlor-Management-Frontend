@@ -1,9 +1,10 @@
-
-
 const Statistics = () => {
   return (
-    <div>Statistics</div>
-  )
-}
+    <div className="bg-[#fff8f5] py-5">
+      
+      <div>information</div>
+    </div>
+  );
+};
 
-export default Statistics
+export default Statistics;
