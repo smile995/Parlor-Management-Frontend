@@ -6,7 +6,6 @@ import HomePage from "../Pages/Public/HomePage";
 import OurServices from "../Pages/Public/OurServices";
 import OurTeam from "../Pages/Public/OurTeam";
 import Blogs from "../Pages/Public/Blogs";
-import Packages from "../Pages/Public/Packages";
 import Offers from "../Pages/Public/Offers";
 
 export const PublicRoutes = [
@@ -26,10 +25,7 @@ export const PublicRoutes = [
         path: "/our-team",
         element: <OurTeam />,
       },
-      {
-        path: "/packages",
-        element: <Packages />,
-      },
+      
       {
         path: "/offers",
         element: <Offers />,

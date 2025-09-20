@@ -2,14 +2,13 @@ import { Link } from "react-router";
 import { services } from "../../DummyData/Services";
 import ServiceCard from "../shared/ServiceCard";
 import SharedBtn from "../shared/SharedBtn";
+import HeaderTitle from "../shared/HeaderTitle";
 
 const Services = () => {
   return (
     <div className="bg-white py-5">
       <div className="my-5 ">
-        <h1 className="md:text-3xl text-2xl font-bold text-black text-center">
-          Our Awesome <span className="text-[#f63e7b]">Services</span>
-        </h1>
+        <HeaderTitle BText="Our Tranding" CText="Services"/>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 mx-auto p-5 gap-5 my-3">
         {services.map((service) => (

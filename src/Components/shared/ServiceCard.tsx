@@ -11,10 +11,7 @@ const ServiceCard = ({ service }: { service: IService }) => {
   return (
     <div>
       <Card
-        // sx={{
-        //   width: { xs: "100%", sm: 280, md: 300 }, // full width on mobile, fixed on larger screens
-        //   margin: "auto",
-        // }}
+    
       >
         <CardMedia sx={{ height: 200,  }} image={image} />
         <CardContent>

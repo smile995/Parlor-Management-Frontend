@@ -21,7 +21,6 @@ const Navber = () => {
   const PublicPage = [
     { label: "Home", link: "" },
     { label: "Services", link: "services" },
-    { label: "Packages", link: "packages" },
     { label: "Offers", link: "offers" },
     { label: "Blogs", link: "blogs" },
     { label: "Our Team", link: "our-team" },
