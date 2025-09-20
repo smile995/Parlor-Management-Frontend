@@ -2,7 +2,7 @@ const ContactForm = () => {
   return (
     <div className="bg-[#fff8f5] py-10">
       <div className="text-center mb-5 lg:w-1/3 md:w-2/3 w-full mx-auto">
-        <h1 className="text-black font-bold text-2xl md:text-4xl">
+        <h1 className="text-black font-semibold text-xl md:text-3xl">
           Feel frree to contact us
         </h1>
       </div>

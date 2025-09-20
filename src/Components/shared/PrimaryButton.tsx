@@ -4,7 +4,7 @@ import type { IPrimaryButtonProps } from "../../Types";
 const PrimaryButton: React.FC<IPrimaryButtonProps> = ({
   label,
   func,
-  type = "button",
+   type = "button", 
   disabled = false,
   className = "",
 }:IPrimaryButtonProps) => {
