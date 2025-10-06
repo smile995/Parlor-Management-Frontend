@@ -1,12 +1,11 @@
+import HeaderTitle from "../shared/HeaderTitle";
+
 const ContactForm = () => {
   return (
     <div className="bg-[#fff8f5] py-10">
-      <div className="text-center mb-5 lg:w-1/3 md:w-2/3 w-full mx-auto">
-        <h1 className="text-black font-semibold text-xl md:text-3xl">
-          Feel frree to contact us
-        </h1>
-      </div>
-      <div className="md:w-2/3 lg:w-1/2 w-full p-5 md:p-2 mx-auto">
+      <HeaderTitle BText="Feel frree to" CText="contact us" />
+      
+      <div className="md:w-2/3 lg:w-1/2 w-full mt-5 p-5 md:p-2 mx-auto">
         <form className="spyace-y-5">
           <div className="md:flex gap-5 items-center">
             <input

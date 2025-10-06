@@ -6,7 +6,7 @@ const MainLayOut = () => {
   const { pathname } = useLocation();
 
   return (
-    <div className="space-y-5">
+    <div >
       {!(pathname === "/login" || pathname === "/register") && <Navber />}
       <Outlet />
        {!(pathname === "/login" || pathname === "/register") && <Footer />}

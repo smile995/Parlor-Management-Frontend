@@ -1,14 +1,14 @@
 import { clientReviews } from "../../DummyData/reviews";
 import Marquee from "react-fast-marquee";
 import ReviewCard from "./ReviewCard";
+import HeaderTitle from "../shared/HeaderTitle";
 
 const Testimonials = () => {
   return (
     <div className="bg-white py-10">
-      <div>
-        <h1 className="pb-4 text-black text-center md:text-3xl text-2xl font-bold">Testimonials</h1>
-      </div>
-      <div>
+      <HeaderTitle BText="What Our" CText="Clients Say" />
+     
+      <div className="mt-5">
         <Marquee  pauseOnHover={true} speed={50}>
           {clientReviews.map((review) => (
             <ReviewCard key={review._id} review={review}/>

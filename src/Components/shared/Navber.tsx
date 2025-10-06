@@ -52,6 +52,7 @@ const Navber = () => {
     <div>
       <AppBar
         style={{ backgroundColor: "#fff8f5" }}
+        className="shadow-md border-b border-[#f53d7a]"
         elevation={0}
         position="fixed"
       >

@@ -5,10 +5,10 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import type { IService } from "../../Types";
-import { IoMdTime } from "react-icons/io";
+import { IoTimer } from "react-icons/io5";
 import { FaUsers } from "react-icons/fa6";
-import { TbCoinTaka } from "react-icons/tb";
-
+import { TbCurrencyTaka } from "react-icons/tb";
+import { Divider } from "@mui/material";
 const ServiceCard = ({ service }: { service: IService }) => {
   const {
     image,
@@ -17,17 +17,11 @@ const ServiceCard = ({ service }: { service: IService }) => {
     category,
     description,
     price,
-    availableStaff,
-    benefits,
     discount,
-    preparation,
-    products,
-    rating,
-    slots,
-    status,
     totalOrder,
   } = service;
   const discountNumber = Number(discount);
+  const finalPrice = price - (price * discountNumber) / 100;
 
   const categoryColors: Record<string, string> = {
     // Beauty & Personal Care
@@ -56,52 +50,66 @@ const ServiceCard = ({ service }: { service: IService }) => {
       <Card>
         <CardMedia sx={{ height: 200 }} image={image} />
         <CardContent>
-          <div className="flex items-center justify-between ">
+          <div className="flex items-center font-semibold text-sm justify-between mb-2 ">
             <p
               className={`${
                 categoryColors[category] || "bg-gray-200"
-              } max-w-fit px-3 rounded-full text-sm`}
+              } max-w-fit px-3 rounded-full`}
             >
               {category}
             </p>
-           { discountNumber > 0 && (
-              <p className="bg-red-100 text-sm text-red-600 max-w-fit px-3 rounded-full">
+            {discountNumber > 0 && (
+              <p className="bg-red-100 text-red-600 max-w-fit px-3 rounded-full">
                 {discount}% OFF
               </p>
-           ) }
+            )}
           </div>
-          <Typography gutterBottom variant="h6" component="div">
+          <Typography gutterBottom variant="subtitle1" component="div">
             {name}
           </Typography>
-          <Typography variant="body2" sx={{ color: "text.secondary" }}>
-            {description}
+          <Typography variant="subtitle2" sx={{ color: "text.secondary" }}>
+            {/* {description} */}
+            {description.length > 60 ? (
+              <p>{description.slice(0, 60)}...</p>
+            ) : (
+              description
+            )}
           </Typography>
           <Typography variant="body2" sx={{ color: "text.secondary" }}>
-            <div className="flex items-center gap-5 mt-2">
+            <div className="flex items-center gap-10 ">
               <div>
                 <p className="flex items-center gap-1">
-                  <IoMdTime />
+                  <IoTimer className="text-rose-500 " />
                   {duration}
                 </p>
               </div>
               <div>
                 <p className="flex items-center gap-1">
-                  <FaUsers />
+                  <FaUsers className="text-rose-500" />
                   {totalOrder} orders
                 </p>
               </div>
             </div>
-          </Typography>
-          <Typography
-            variant="subtitle1"
-            className="flex items-center gap-1"
-            color="text.primary"
-          >
-            <TbCoinTaka />
-            {price}
+            <div className="flex items-center gap-8 mt-2">
+              <p className="flex items-center text-base font-semibold text-black">
+                <TbCurrencyTaka className="text-rose-500 text-xl" />
+                {finalPrice}
+              </p>
+              <div className="text-base font-semibold ">
+                {discountNumber > 0 && (
+                  <del>
+                    <p className="text-base font-semibold flex items-center text-gray-500">
+                      <TbCurrencyTaka />
+                      {price}
+                    </p>
+                  </del>
+                )}
+              </div>
+            </div>
           </Typography>
         </CardContent>
-        <CardActions>
+        <Divider />
+        <CardActions className="flex justify-between px-3 ">
           <Button size="small">Book Now</Button>
           <Button size="small">Details</Button>
         </CardActions>
