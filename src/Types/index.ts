@@ -35,3 +35,18 @@ export interface IClientReview {
   comment: string;
   date: string; // ISO string or formatted date
 }
+
+export interface ITeammate {
+  id: number;
+  name: string;
+  age: number;
+  gender: string
+  experience: string;
+  expertIn: string[];
+  rating: number;
+  availableDays: string[];
+  contact: string;
+  photo: string;
+  bio: string;
+  status:  string
+}
