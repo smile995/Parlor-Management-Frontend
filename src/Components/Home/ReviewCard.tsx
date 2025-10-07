@@ -13,8 +13,8 @@ const ReviewCard = ({ review }: { review: IClientReview }) => {
   const { customerName, profession, customerImage, date, rating, comment } =
     review;
   return (
-    <div className="m-2">
-      <Card sx={{ maxWidth: 300 }}>
+    <div className="m-2 border-l-4 border-[#f53d7a] rounded-xl">
+      <Card  sx={{ maxWidth: 300 }}>
         <CardHeader
           avatar={
             <Avatar
