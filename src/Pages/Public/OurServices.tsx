@@ -1,25 +1,16 @@
 // import Services from "../../Components/Home/Services";
 import HeaderBanner from "../../Components/shared/HeaderBanner";
-import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
+// import { useQuery } from "@tanstack/react-query";
+// import axios from "axios";
 import Loading from "../../Components/ReUsable/Loading";
 import ServiceCard from "../../Components/shared/ServiceCard";
 import type { IService } from "../../Types";
 import HeaderTitle from "../../Components/shared/HeaderTitle";
+import { useServices } from "../../Hooks/useServices";
 
 const OurServices = () => {
-  const fetchServices = async () => {
-    const { data } = await axios.get(
-      `${import.meta.env.VITE_LocalURL}/services`
-    );
-    return data;
-  };
 
-  const { data, isLoading, isFetching,isSuccess,isPending} = useQuery({
-    queryKey: ["services"],
-    queryFn: fetchServices,
-  });
-
+  const {data, isLoading, isFetching,isSuccess,isPending}= useServices()
   const services = data?.data;
 
   if (isLoading || isFetching||!isSuccess||isPending) {

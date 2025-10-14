@@ -9,8 +9,10 @@ import { IoTimer } from "react-icons/io5";
 import { FaUsers } from "react-icons/fa6";
 import { TbCurrencyTaka } from "react-icons/tb";
 import { Divider } from "@mui/material";
+import { Link } from "react-router";
 const ServiceCard = ({ service }: { service: IService }) => {
   const {
+    _id,
     image,
     name,
     duration,
@@ -111,7 +113,9 @@ const ServiceCard = ({ service }: { service: IService }) => {
         <Divider />
         <CardActions className="flex justify-between px-3 ">
           <Button size="small">Book Now</Button>
-          <Button size="small">Details</Button>
+          <Link to={`/services/${_id}`}>
+            <Button size="small">Details</Button>
+          </Link>
         </CardActions>
       </Card>
     </div>

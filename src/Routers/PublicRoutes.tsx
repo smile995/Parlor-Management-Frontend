@@ -7,6 +7,7 @@ import OurServices from "../Pages/Public/OurServices";
 import OurTeam from "../Pages/Public/OurTeam";
 import Blogs from "../Pages/Public/Blogs";
 import Offers from "../Pages/Public/Offers";
+import ServiceDetail from "../Pages/Public/ServiceDetail";
 
 export const PublicRoutes = [
       {
@@ -20,6 +21,10 @@ export const PublicRoutes = [
       {
         path: "/services",
         element: <OurServices />,
+      },
+      {
+        path: "/services/:id",
+        element: <ServiceDetail />,
       },
       {
         path: "/our-team",
