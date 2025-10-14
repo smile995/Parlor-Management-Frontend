@@ -69,8 +69,8 @@ const ServiceCard = ({ service }: { service: IService }) => {
           </Typography>
           <Typography variant="subtitle2" sx={{ color: "text.secondary" }}>
             {/* {description} */}
-            {description.length > 60 ? (
-              <p>{description.slice(0, 60)}...</p>
+            {description.length > 55 ? (
+              <p>{description.slice(0, 55)}...</p>
             ) : (
               description
             )}
