@@ -19,6 +19,7 @@ const ServiceCard = ({ service }: { service: IService }) => {
     category,
     description,
     price,
+    rating,
     discount,
     totalOrder,
   } = service;
@@ -50,7 +51,17 @@ const ServiceCard = ({ service }: { service: IService }) => {
   return (
     <div>
       <Card>
-        <CardMedia sx={{ height: 200 }} image={image} />
+        <div className="relative">
+          <CardMedia sx={{ height: 200 }} image={image} />
+         
+          {rating ? (
+            <p className="absolute top-2 left-2 bg-yellow-400 opacity-85 px-2  py-1 rounded text-black font-semibold text-sm ">
+              {Math.round(rating)}
+            </p>
+          ) : (
+            ""
+          )} 
+        </div>
         <CardContent>
           <div className="flex items-center font-semibold text-sm justify-between mb-2 ">
             <p
