@@ -1,11 +1,12 @@
-
-import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 const NotFound = () => {
   return (
-    <div className='h-[95vh] w-full flex justify-center items-center'>
-     <DotLottieReact part='../../assets/Lotties/NotFound.json' loop autoplay />
+    <div className="h-[95vh] w-full flex justify-center items-center">
+      <div>
+        <h1 className="text-center text-2xl font-bold text-red-400">404</h1>
+        <h1 className="text-center text-2xl font-bold ">Page Not Found</h1>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default NotFound
+export default NotFound;

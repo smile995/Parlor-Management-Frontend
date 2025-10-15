@@ -50,3 +50,15 @@ export interface ITeammate {
   bio: string;
   status:  string
 }
+
+export interface ICategory{
+  _id: string;
+  name: string; // e.g., "Hair Care", "Skin Treatment"
+  description?: string; // short description for category section
+  serviceCount?: number; // total services in this category
+  packageCount?: number; // total packages in this category
+  isActive?: boolean; // toggle visibility
+  isDeleted?: boolean; // soft delete flag
+  createdAt?: Date;
+  updatedAt?: Date;
+}

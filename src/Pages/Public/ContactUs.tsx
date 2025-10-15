@@ -1,3 +1,4 @@
+
 import HeaderBanner from "../../Components/shared/HeaderBanner"
 import HeaderTitle from "../../Components/shared/HeaderTitle"
 
@@ -15,6 +16,7 @@ const ContactUs = () => {
       <div>
         contact info comming soon
       </div>
+  
     </div>
   )
 }
