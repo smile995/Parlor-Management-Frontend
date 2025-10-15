@@ -33,8 +33,8 @@ const ServiceDetail = () => {
     enabled: !!id, // only run the query if id is defined
   });
   const service = serviceDetails?.data as IService;
-  const SimilarServices = allServices.filter(
-    (service: IService) => service?.name == service?.name
+  const SimilarServices = allServices?.filter(
+    (Fservice: IService) => Fservice?.category === service?.category
   );
 
   if (isLoading || isFetching || isPending || !isSuccess || isError) {
@@ -154,14 +154,22 @@ const ServiceDetail = () => {
                   Our Category
                 </p>
               </div>
-              {categoryData?.map((category: ICategory) => (
-                <button
-                  onClick={() => handleCategoryClick(category?.name)}
-                  className="bg-green-50 hover:bg-green-100 mb-2 hover:text-green-600 font-semibold w-full rounded "
-                >
-                  {category?.name?.toUpperCase()}
-                </button>
-              ))}
+              <div>
+                {categoryData ? (
+                  <>
+                    {categoryData?.map((category: ICategory) => (
+                      <button
+                        onClick={() => handleCategoryClick(category?.name)}
+                        className="bg-green-50 hover:bg-green-100 mb-2 hover:text-green-600 font-semibold w-full rounded "
+                      >
+                        {category?.name?.toUpperCase()}
+                      </button>
+                    ))}
+                  </>
+                ) : (
+                  <Loading />
+                )}
+              </div>
             </div>
           </div>
         </div>
@@ -169,14 +177,25 @@ const ServiceDetail = () => {
         <Loading />
       )}
 
-      <div className="md:p-6 p-3 shadow-2xl mb-3 md:mb-6 md:mx-5 mx-2 rounded-2xl">
+      <div className="md:p-4 p-2 shadow-2xl mb-3 md:mb-6 md:mx-5 mx-2 rounded-2xl">
         <p className="font-semibold text-xl ">
           Total Similar Service: <span>{SimilarServices?.length}</span>
         </p>
-        <div>
-          {SimilarServices?.map((SimilarService,inx) => (
-            <ServiceCard key={inx} service={SimilarService} />
-          ))}
+        <div className="my-3">
+          {SimilarServices?.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid lg:grid-cols-4 gap-5">
+              {SimilarServices?.map((SimilarService, inx) => (
+                <ServiceCard key={inx} service={SimilarService} />
+              ))}
+            </div>
+          ) : (
+            <div className="flex justify-center items-center ">
+              <div>
+                There Was No Similier services
+                <Loading />
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
