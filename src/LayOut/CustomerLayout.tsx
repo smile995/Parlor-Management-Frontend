@@ -1,12 +1,9 @@
-import { Outlet } from "react-router"
 
+import { CustomerRoutes } from "../Routers/CustomerRoutes";
+import DashboardLayout from "./DashboardLayout";
 
 const CustomerLayout = () => {
-  return (
-    <div>
-     <Outlet/>
-    </div>
-  )
-}
+  return <DashboardLayout routes={CustomerRoutes} />;
+};
 
-export default CustomerLayout
+export default CustomerLayout;
