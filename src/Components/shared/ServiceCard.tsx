@@ -54,9 +54,9 @@ const ServiceCard = ({ service }: { service: IService }) => {
         <div className="relative">
           <CardMedia sx={{ height: 200 }} image={image} />
          
-          {rating ? (
-            <p className="absolute top-2 left-2 bg-yellow-400 opacity-85 px-2  py-1 rounded text-black font-semibold text-sm ">
-              {Math.round(rating)}
+          {rating  ? (
+            <p className="absolute top-2 left-2 bg-gray-100 px-2  py-1 rounded text-black font-semibold text-sm ">
+              ⭐{rating}
             </p>
           ) : (
             ""

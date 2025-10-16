@@ -11,7 +11,7 @@ const fetchServices = async () => {
 // custom hook
 export const useCategories = () => {
   return useQuery({
-    queryKey: ["services"], // unique key for cache
+    queryKey: ["categories"], // unique key for cache
     queryFn: fetchServices,
     staleTime: 1000 * 60 * 5, // 5 min cache
   });

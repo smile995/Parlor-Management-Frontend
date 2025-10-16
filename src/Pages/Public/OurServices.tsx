@@ -11,7 +11,7 @@ import { useServices } from "../../Hooks/useServices";
 const OurServices = () => {
 
   const {data, isLoading, isFetching,isSuccess,isPending}= useServices()
-  const services = data?.data;
+  const services = data?.data as IService[];
 
   if (isLoading || isFetching||!isSuccess||isPending) {
     return <Loading />;
@@ -29,9 +29,9 @@ const OurServices = () => {
       </div>
 
       <div className="my-6 md:my-10 lg:my-14  px-3 md:px-5">
-        {services.length > 0 ? (
+        {services?.length > 0 ? (
           <div className="grid grid-cols-1  md:grid-cols-3 lg:grid-cols-4 gap-5">
-            {services.map((service: IService) => (
+            {services?.map((service: IService) => (
               <ServiceCard service={service} />
             ))}
           </div>

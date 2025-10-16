@@ -26,7 +26,7 @@ const Navber = () => {
     { label: "Contact Us", link: "contact-us" },
   ];
   const role = "admin";
-  const user = false;
+  const user = true;
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );

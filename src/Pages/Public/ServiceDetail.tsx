@@ -14,11 +14,15 @@ const ServiceDetail = () => {
   const { data: fetchData } = useServices();
   const allServices = fetchData?.data as IService[];
   const categoryData = categories?.data;
+  console.log(categoryData);
+  
+  
 
   const fetchDetails = async () => {
     const { data } = await axiosInstance.get(`/services/${id}`);
     return data;
   };
+
 
   const {
     data: serviceDetails,
@@ -30,7 +34,7 @@ const ServiceDetail = () => {
   } = useQuery({
     queryKey: ["serviceDetails", id],
     queryFn: fetchDetails,
-    enabled: !!id, // only run the query if id is defined
+    
   });
   const service = serviceDetails?.data as IService;
   const SimilarServices = allServices?.filter(
@@ -155,7 +159,7 @@ const ServiceDetail = () => {
                 </p>
               </div>
               <div>
-                {categoryData ? (
+                {categoryData?.length>0 ? (
                   <>
                     {categoryData?.map((category: ICategory) => (
                       <button
