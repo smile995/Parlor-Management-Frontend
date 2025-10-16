@@ -9,15 +9,15 @@ interface IRoute {
   path: string;
   element?: ReactNode;
 }
-const DashboardLayout = ({ routes }: { routes: [IRoute] }) => {
+const DashboardLayout = ({ routes }: { routes: IRoute[] }) => {
   return (
     <div>
-      <div className="grid md:grid-cols-5 grid-cols-1 gap-5 lg:p-5 p-2  md:min-h-[100vh] h-auto ">
-        <div className="md:col-span-1 lg:p-5 p-2 shadow-2xl w-full rounded md:rounded-xl ">
+      <div className="grid md:grid-cols-5 borde grid-cols-1 lg:gap-5 md:gap-2 lg:p-5 p-2  md:min-h-[100vh] h-auto ">
+        <div className="md:col-span-1 border border-purple-100 p-2 shadow-2xl w-full rounded md:rounded-xl ">
           <div className=" my-3 flex justify-center">
             <div>
               <img
-                className="rounded-full w-[65px] h-[65px] mx-auto p-1 border-2 border-green-500"
+                className="rounded-full w-[65px] h-[65px] mx-auto p-1 border-2 border-purple-500"
                 src="https://img.freepik.com/free-vector/smiling-young-man-illustration_1308-174669.jpg"
                 alt="profile"
               />
@@ -39,7 +39,7 @@ const DashboardLayout = ({ routes }: { routes: [IRoute] }) => {
           <div>
             {routes.map((route: IRoute) => (
               <NavLink to={`${route.path}`}>
-                <button className="md:w-full p-1 m-1  font-semibold bg-purple-600 rounded ">
+                <button className="md:w-full p-1 md:mb-2 sm:mr-2 font-semibold bg-purple-600 rounded ">
                   {route.name}
                 </button>
               </NavLink>

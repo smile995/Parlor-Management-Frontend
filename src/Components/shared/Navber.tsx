@@ -14,10 +14,9 @@ import {
 import React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import logo from "../../assets/logo.png";
-import { NavLink } from "react-router";
-import "../../index.css"
+import { Link, NavLink } from "react-router";
+import "../../index.css";
 const Navber = () => {
-
   const PublicPage = [
     { label: "Home", link: "" },
     { label: "Services", link: "services" },
@@ -26,7 +25,8 @@ const Navber = () => {
     { label: "Our Team", link: "our-team" },
     { label: "Contact Us", link: "contact-us" },
   ];
-  const settings = ["Dashboard", "Logout"];
+  const role = "admin";
+  const user = false;
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
@@ -52,7 +52,6 @@ const Navber = () => {
     <div>
       <AppBar
         style={{ backgroundColor: "#fff8f5" }}
-        className="shadow-md border-b border-[#f53d7a]"
         elevation={0}
         position="fixed"
       >
@@ -104,7 +103,7 @@ const Navber = () => {
                 sx={{ display: { xs: "block", md: "none" } }}
               >
                 {PublicPage.map((page, index) => (
-                  <MenuItem  key={index} onClick={handleCloseNavMenu}>
+                  <MenuItem key={index} onClick={handleCloseNavMenu}>
                     <NavLink to={`/${page.link}`}>
                       <Typography sx={{ textAlign: "center" }}>
                         {page.label}
@@ -136,7 +135,7 @@ const Navber = () => {
               {PublicPage.map((page, index) => (
                 <NavLink to={`/${page.link}`}>
                   <Button
-                  className="font-bold"
+                    className="font-bold"
                     key={index}
                     onClick={handleCloseNavMenu}
                     sx={{ my: 2, color: "black", display: "block" }}
@@ -146,37 +145,49 @@ const Navber = () => {
                 </NavLink>
               ))}
             </Box>
-            <Box sx={{ flexGrow: 0 }}>
-              <Tooltip title="Dashboard">
-                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-                </IconButton>
-              </Tooltip>
-              <Menu
-                sx={{ mt: "45px" }}
-                id="menu-appbar"
-                anchorEl={anchorElUser}
-                anchorOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                open={Boolean(anchorElUser)}
-                onClose={handleCloseUserMenu}
-              >
-                {settings.map((setting) => (
-                  <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                    <Typography sx={{ textAlign: "center", color: "black" }}>
-                      {setting}
-                    </Typography>
+            {user ? (
+              <Box sx={{ flexGrow: 0 }}>
+                <Tooltip title="Dashboard">
+                  <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                    <Avatar
+                      alt="Remy Sharp"
+                      src="/static/images/avatar/2.jpg"
+                    />
+                  </IconButton>
+                </Tooltip>
+                <Menu
+                  sx={{ mt: "45px" }}
+                  id="menu-appbar"
+                  anchorEl={anchorElUser}
+                  anchorOrigin={{
+                    vertical: "top",
+                    horizontal: "right",
+                  }}
+                  keepMounted
+                  transformOrigin={{
+                    vertical: "top",
+                    horizontal: "right",
+                  }}
+                  open={Boolean(anchorElUser)}
+                  onClose={handleCloseUserMenu}
+                >
+                  <MenuItem>
+                    <Link to={`${role}/dashboard`}>
+                      <button>Dashboard</button>
+                    </Link>
                   </MenuItem>
-                ))}
-              </Menu>
-            </Box>
+                  <MenuItem>
+                    <button>Logout</button>
+                  </MenuItem>
+                </Menu>
+              </Box>
+            ) : (
+              <Link to={"/login"}>
+                <button className="bg-blue-600 px-2 py-1 rounded font-semibold">
+                  Login
+                </button>
+              </Link>
+            )}
           </Toolbar>
         </Container>
       </AppBar>

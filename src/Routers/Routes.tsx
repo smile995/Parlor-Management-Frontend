@@ -6,6 +6,8 @@ import { AdminRoutes } from "./AdminRoutes";
 import { CustomerRoutes } from "./CustomerRoutes";
 import { PublicRoutes } from "./PublicRoutes";
 import NotFound from "../Components/ReUsable/NotFound";
+import StaffLayout from "../LayOut/StaffLayout";
+import { StaffRoutes } from "./StaffRoutes";
 
 export const allRoutes = createBrowserRouter([
   {
@@ -15,7 +17,7 @@ export const allRoutes = createBrowserRouter([
     errorElement: <NotFound />,
   },
   {
-    path: "/customers",
+    path: "/customer",
     element: <CustomerLayout />,
     children: CustomerRoutes,
     errorElement: <NotFound />,
@@ -24,6 +26,12 @@ export const allRoutes = createBrowserRouter([
     path: "/admin",
     element: <AdminLayout />,
     children: AdminRoutes,
+    errorElement: <NotFound />,
+  },
+  {
+    path: "/staff",
+    element: <StaffLayout />,
+    children: StaffRoutes,
     errorElement: <NotFound />,
   },
 ]);
