@@ -26,6 +26,25 @@ export interface IService {
   preparation?: string; // instructions for customer
   status?: string; // service availability
 }
+export interface IPackage {
+  _id: string;
+  name: string; // e.g., "Bridal Glow Package"
+  servicesNames: string[]; // list of service IDs or names
+  description: string; // brief overview of the package
+  totalPrice: number; // sum of all included services (before discount)
+  discount?: number; // auto-calculated or manual
+  duration: string; // e.g., "3 hrs 30 mins"
+  image: string; // banner image for package
+  rating?: number; // average from feedback
+  totalBookings?: number;
+  products?: string[]; // e.g., ["Free consultation", "Priority booking"]
+  benefits?: string[]; // e.g., ["Free consultation", "Priority booking"]
+  availableStaff?: string[]; // list of staff IDs or names
+  preparation?: string; // e.g., "Stay hydrated, avoid caffeine"
+  status?: "Active" | "Unavailable" | "Coming Soon"
+ 
+
+}
 export interface IClientReview {
   _id: string; // MongoDB ObjectId as string
   customerName: string;
