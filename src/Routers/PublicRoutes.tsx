@@ -8,6 +8,8 @@ import OurTeam from "../Pages/Public/OurTeam";
 import Blogs from "../Pages/Public/Blogs";
 import Offers from "../Pages/Public/Offers";
 import ServiceDetail from "../Pages/Public/ServiceDetail";
+import PackageDetails from "../Pages/Public/PackageDetails";
+import Bookings from "../Pages/Customer/Bookings";
 
 export const PublicRoutes = [
       {
@@ -25,6 +27,10 @@ export const PublicRoutes = [
       {
         path: "/services/:id",
         element: <ServiceDetail />,
+      },
+      {
+        path: "/packages/:id",
+        element: <PackageDetails />,
       },
       {
         path: "/our-team",
@@ -46,5 +52,9 @@ export const PublicRoutes = [
       {
         path: "/register",
         element: <Register />,
+      },
+      {
+        path: "/bookings",
+        element: <Bookings />,
       },
     ]

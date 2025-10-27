@@ -10,7 +10,7 @@ const MainLayOut = () => {
       {!(pathname === "/login" || pathname === "/register") && <Navber />}
       
         <Outlet />
-      
+
       {!(pathname === "/login" || pathname === "/register") && <Footer />}
     </div>
   );

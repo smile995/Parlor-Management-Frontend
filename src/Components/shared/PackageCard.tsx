@@ -83,7 +83,7 @@ const PackageCard = ({ comboPackage }: { comboPackage: IPackage }) => {
         <Divider />
         <CardActions className="flex justify-between px-3 ">
           <Button size="small">Book Now</Button>
-          <Link to={`/services/${_id}`}>
+          <Link to={`/packages/${_id}`}>
             <Button size="small">Details</Button>
           </Link>
         </CardActions>
