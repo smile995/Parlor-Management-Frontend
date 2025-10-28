@@ -5,6 +5,7 @@ import { FaCheck, FaClock, FaStar, FaTag, FaUsers } from "react-icons/fa6";
 import type { IPackage } from "../../Types";
 import type { ReactNode } from "react";
 import Loading from "../../Components/ReUsable/Loading";
+import InfoCard from "../../Components/shared/InfoCard";
 
 const PackageDetails = () => {
   const { id } = useParams();
@@ -188,23 +189,7 @@ const PackageDetails = () => {
   );
 };
 
-const InfoCard = ({
-  icon,
-  label,
-  value,
-}: {
-  icon: ReactNode;
-  label: string;
-  value: number | string | ReactNode;
-}) => (
-  <div className="flex flex-col items-start bg-white p-4 rounded-xl shadow-sm">
-    <div className="flex items-center gap-2 mb-1 text-gray-500 text-sm font-medium">
-      {icon}
-      <span>{label}</span>
-    </div>
-    <p className="text-gray-900 font-semibold">{value}</p>
-  </div>
-);
+
 
 const Section = ({ title, children }: {title:string,children:ReactNode}) => (
   <div className="mb-8">

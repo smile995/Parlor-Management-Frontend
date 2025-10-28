@@ -7,6 +7,8 @@ import { useCategories } from "../../Hooks/useCategories";
 import type { ICategory, IService } from "../../Types";
 import { useServices } from "../../Hooks/useServices";
 import ServiceCard from "../../Components/shared/ServiceCard";
+import InfoCard from "../../Components/shared/InfoCard";
+import { FaClock, FaStar, FaTag, FaUsers } from "react-icons/fa6";
 
 const ServiceDetail = () => {
   const { id } = useParams();
@@ -15,14 +17,11 @@ const ServiceDetail = () => {
   const allServices = fetchData?.data as IService[];
   const categoryData = categories?.data;
   console.log(categoryData);
-  
-  
 
   const fetchDetails = async () => {
     const { data } = await axiosInstance.get(`/services/${id}`);
     return data;
   };
-
 
   const {
     data: serviceDetails,
@@ -34,7 +33,6 @@ const ServiceDetail = () => {
   } = useQuery({
     queryKey: ["serviceDetails", id],
     queryFn: fetchDetails,
-    
   });
   const service = serviceDetails?.data as IService;
   const SimilarServices = allServices?.filter(
@@ -59,42 +57,50 @@ const ServiceDetail = () => {
 
           <div className="  grid md:grid-cols-5 grid-cols-1 gap-5 md:p-6 p-3">
             <div className=" p-6  shadow-lg rounded-2xl md:col-span-4 ">
-              <h2 className="text-2xl font-bold text-gray-800 mb-4">
-                {service?.name}
-              </h2>
+              <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                <InfoCard
+                  icon={<FaClock />}
+                  label="Duration"
+                  value={service.duration}
+                />
+                <InfoCard
+                  icon={<FaTag />}
+                  label="Total Price"
+                  value={
+                    <span>
+                      ৳{service.price}{" "}
+                      {service.discount && (
+                        <span className="ml-1 text-sm text-green-600">
+                          (-{service.discount}% off)
+                        </span>
+                      )}
+                    </span>
+                  }
+                />
+                <InfoCard
+                  icon={<FaStar />}
+                  label="Rating"
+                  value={service.rating ?? "N/A"}
+                />
+                <InfoCard
+                  icon={<FaUsers />}
+                  label="Bookings"
+                  value={service.totalOrder ?? 0}
+                />
+              </div>
 
-              <div className="grid md:grid-cols-2 gap-6">
+              <div >
                 <div>
+                  <h2 className="text-2xl font-bold text-gray-800 mb-2">
+                    {service?.name}
+                  </h2>
                   <p className="text-gray-600 mb-2">
                     <span className="font-semibold">Category:</span>{" "}
                     {service?.category}
                   </p>
-                  <p className="text-gray-600 mb-2">
-                    <span className="font-semibold">Duration:</span>{" "}
-                    {service?.duration}
-                  </p>
-                  <p className="text-gray-600 mb-2">
-                    <span className="font-semibold">Price:</span> $
-                    {service?.price}{" "}
-                    {service?.discount ? (
-                      <span className="text-green-600">
-                        (-{service?.discount}%)
-                      </span>
-                    ) : (
-                      ""
-                    )}
-                  </p>
                 </div>
 
                 <div>
-                  <p className="text-gray-600 mb-2">
-                    <span className="font-semibold">Rating:</span> ⭐{" "}
-                    {service?.rating}
-                  </p>
-                  <p className="text-gray-600 mb-2">
-                    <span className="font-semibold">Total Orders:</span>{" "}
-                    {service?.totalOrder}
-                  </p>
                   <p className="text-gray-600 mb-2">
                     <span className="font-semibold">Preparation:</span>{" "}
                     {service?.preparation}
@@ -159,7 +165,7 @@ const ServiceDetail = () => {
                 </p>
               </div>
               <div>
-                {categoryData?.length>0 ? (
+                {categoryData?.length > 0 ? (
                   <>
                     {categoryData?.map((category: ICategory) => (
                       <button
