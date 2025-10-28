@@ -1,4 +1,3 @@
-
 import HeaderBanner from "../../Components/shared/HeaderBanner";
 
 import Loading from "../../Components/ReUsable/Loading";
@@ -12,7 +11,7 @@ import PackageCard from "../../Components/shared/PackageCard";
 const OurServices = () => {
   const { data, isLoading, isFetching, isSuccess, isPending } = useServices();
   const services = data?.data as IService[];
-  const { data: packageData } = usePackages();
+  const { data: packageData, isLoading: packageLoading } = usePackages();
   const packages = packageData?.data as IPackage[];
   if (isLoading || isFetching || !isSuccess || isPending) {
     return <Loading />;
@@ -56,6 +55,7 @@ const OurServices = () => {
             No Packages Available
           </h2>
         )}
+        {packageLoading && <Loading />}
       </div>
     </div>
   );
