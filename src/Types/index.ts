@@ -1,5 +1,3 @@
-
-
 export interface IPrimaryButtonProps {
   label: string;
   func?: React.MouseEventHandler<HTMLButtonElement>;
@@ -41,9 +39,31 @@ export interface IPackage {
   benefits?: string[]; // e.g., ["Free consultation", "Priority booking"]
   availableStaff?: string[]; // list of staff IDs or names
   preparation?: string; // e.g., "Stay hydrated, avoid caffeine"
-  status?: "Active" | "Unavailable" | "Coming Soon"
- 
+  status?: "Active" | "Unavailable" | "Coming Soon";
+}
+export interface IBlog {
+  _id: string;
+  title: string;
+  slug?: string; // SEO-friendly URL
+  author: string; // could be userId or name
+  category: string; // e.g., "Skincare", "Makeup", "Haircare"
+  tags?: string[]; // ["bridal", "glow", "tips"]
+  description: string; // full content (HTML or Markdown)
+  image: string; // cover image URL
+  likes: number;
+  views?: number;
+  comments?: IComment[];
+  status?: "Draft" | "Published" | "Archived";
+  readingTime?: string | number; // e.g., "4 min read"
+  isDeleted?: boolean;
+  createdAt?: Date;
+  updatedAt?: Date;
+}
 
+export interface IComment {
+  user: string;
+  comment: string;
+  date: Date;
 }
 export interface IClientReview {
   _id: string; // MongoDB ObjectId as string
@@ -59,7 +79,7 @@ export interface ITeammate {
   id: number;
   name: string;
   age: number;
-  gender: string
+  gender: string;
   experience: string;
   expertIn: string[];
   rating: number;
@@ -67,10 +87,10 @@ export interface ITeammate {
   contact: string;
   photo: string;
   bio: string;
-  status:  string
+  status: string;
 }
 
-export interface ICategory{
+export interface ICategory {
   _id: string;
   name: string; // e.g., "Hair Care", "Skin Treatment"
   description?: string; // short description for category section

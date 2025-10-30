@@ -1,15 +1,15 @@
-import facialModel from "../../assets/images/skin-care.png";
+import facialModel from "../../assets/images/skin-care.jpg";
 const Statistics = () => {
   return (
     <div className="bg-[#fff8f5] md:p-10 lg:p-10 p-5 text-black md:flex justify-evenly items-center">
       <div className="md:w-1/2 w-full">
-        <img className="md:w-2/3 w-full mx-auto" src={facialModel} alt="" />
+        <img className="md:w-2/3 w-full mx-auto rounded-xl" src={facialModel} alt="facial model" />
       </div>
       <div className="md:w-1/2 w-full ">
         <div className="md:w-2/3 w-full mx-auto mt-3">
           <h1 className="md:text-3xl text-2xl font-bold text-black ">
-            Let us handle your <br />screen{" "}
-            <span className="text-[#f63e7b]">Professionally.</span>
+            Let us handle your <br />
+            screen <span className="text-[#f63e7b]">Professionally.</span>
           </h1>
           <p className="my-3">
             With well written codes, we build amazing apps for all platforms,
