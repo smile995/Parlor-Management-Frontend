@@ -23,7 +23,7 @@ const Blogs = () => {
         {isLoading && <Loading />}
         <div>
           {blogs?.length > 0 ? (
-            <div className="grid mb-10 grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3">
+            <div className="grid mb-10 grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5">
               {blogs.map((blog) => (
                 <BlogCard blog={blog} key={blog._id} />
               ))}
