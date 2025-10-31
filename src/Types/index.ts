@@ -63,6 +63,7 @@ export interface IBlog {
 export interface IComment {
   user: string;
   comment: string;
+  image?:string;
   date: Date;
 }
 export interface IClientReview {

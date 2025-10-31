@@ -7,6 +7,7 @@ const Loading = () => {
         <span className="loading loading-dots loading-md"></span>
         <span className="loading loading-dots loading-lg"></span>
         <span className="loading loading-dots loading-xl"></span>
+        <p>Wait for a moment...</p>
       </div>
     </div>
   );

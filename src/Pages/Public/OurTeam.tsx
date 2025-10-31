@@ -2,13 +2,13 @@ import HeaderBanner from "../../Components/shared/HeaderBanner"
 import HeaderTitle from "../../Components/shared/HeaderTitle"
 import TeammateCard from "../../Components/Teammates/TeammateCard"
 import { teammates } from "../../DummyData/teammates"
-
+import team from "../../assets/images/teammate.jpg"
 
 const OurTeam = () => {
   return (
     <div className=" text-black bg-white ">
       <HeaderBanner
-      image="https://images.squarespace-cdn.com/content/v1/5655208ae4b0acafe0fb51af/1598406793296-NXL97FXEXTNCB6IA40DE/The+Beauty+Project"
+      image={team}
       title="Meet With Our Expert"
       subTitle="Our team of skilled professionals is dedicated to providing you with exceptional beauty and wellness services."
       />

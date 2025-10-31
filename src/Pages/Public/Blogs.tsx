@@ -29,7 +29,7 @@ const Blogs = () => {
               ))}
             </div>
           ) : (
-            <p>No Blogs Available Now</p>
+            <p className="text-gray-500 text-center">No Blogs Available Now</p>
           )}
         </div>
       </div>

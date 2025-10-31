@@ -16,7 +16,7 @@ const ServiceDetail = () => {
   const { data: fetchData } = useServices();
   const allServices = fetchData?.data as IService[];
   const categoryData = categories?.data;
-  console.log(categoryData);
+
 
   const fetchDetails = async () => {
     const { data } = await axiosInstance.get(`/services/${id}`);
