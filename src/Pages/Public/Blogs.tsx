@@ -1,5 +1,6 @@
 import BlogCard from "../../Components/Blogs/BlogCard";
 import Loading from "../../Components/ReUsable/Loading";
+import Footer from "../../Components/shared/Footer";
 import HeaderBanner from "../../Components/shared/HeaderBanner";
 import HeaderTitle from "../../Components/shared/HeaderTitle";
 import { useBlogs } from "../../Hooks/userBlogs";
@@ -33,6 +34,7 @@ const Blogs = () => {
           )}
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

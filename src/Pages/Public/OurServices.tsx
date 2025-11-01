@@ -7,6 +7,8 @@ import HeaderTitle from "../../Components/shared/HeaderTitle";
 import { useServices } from "../../Hooks/useServices";
 import { usePackages } from "../../Hooks/usePackages";
 import PackageCard from "../../Components/shared/PackageCard";
+import Footer from "../../Components/shared/Footer";
+
 
 const OurServices = () => {
   const { data, isLoading, isFetching, isSuccess, isPending } = useServices();
@@ -57,6 +59,7 @@ const OurServices = () => {
         )}
         {packageLoading && <Loading />}
       </div>
+      <Footer/>
     </div>
   );
 };

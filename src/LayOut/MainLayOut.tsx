@@ -1,6 +1,6 @@
 import { Outlet, useLocation } from "react-router";
 import Navber from "../Components/shared/Navber";
-import Footer from "../Components/shared/Footer";
+
 
 const MainLayOut = () => {
   const { pathname } = useLocation();
@@ -11,7 +11,6 @@ const MainLayOut = () => {
       
         <Outlet />
 
-      {!(pathname === "/login" || pathname === "/register") && <Footer />}
     </div>
   );
 };

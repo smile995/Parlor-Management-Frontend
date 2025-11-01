@@ -53,14 +53,14 @@ const ServiceCard = ({ service }: { service: IService }) => {
       <Card>
         <div className="relative">
           <CardMedia sx={{ height: 200 }} image={image} />
-         
-          {rating  ? (
+
+          {rating ? (
             <p className="absolute top-2 left-2 bg-gray-100 px-2  py-1 rounded text-black font-semibold text-sm ">
               ⭐{rating}
             </p>
           ) : (
             ""
-          )} 
+          )}
         </div>
         <CardContent>
           <div className="flex items-center font-semibold text-sm justify-between mb-2 ">
@@ -82,8 +82,8 @@ const ServiceCard = ({ service }: { service: IService }) => {
           </Typography>
           <Typography variant="subtitle2" sx={{ color: "text.secondary" }}>
             {/* {description} */}
-            {description.length > 55 ? (
-              <p>{description.slice(0, 55)}...</p>
+            {description.length > 70 ? (
+              <p>{description.slice(0, 70)}...</p>
             ) : (
               description
             )}
@@ -123,7 +123,9 @@ const ServiceCard = ({ service }: { service: IService }) => {
         </CardContent>
         <Divider />
         <CardActions className="flex justify-between px-3 ">
-          <Button size="small">Book Now</Button>
+          <Link to={`/services/booking/${_id}`}>
+            <Button size="small">Book Now</Button>
+          </Link>
           <Link to={`/services/${_id}`}>
             <Button size="small">Details</Button>
           </Link>

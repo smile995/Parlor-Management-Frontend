@@ -7,6 +7,7 @@ import ServicesCategory from "../../Components/Home/ServicesCategory";
 import Slider from "../../Components/Home/Slider";
 import Statistics from "../../Components/Home/Statistics";
 import Testimonials from "../../Components/Home/Testimonials";
+import Footer from "../../Components/shared/Footer";
 
 const HomePage = () => {
   return (
@@ -19,6 +20,7 @@ const HomePage = () => {
       <Testimonials />
       <ContactForm />
       <FAQ />
+      <Footer/>
     </div>
   );
 };

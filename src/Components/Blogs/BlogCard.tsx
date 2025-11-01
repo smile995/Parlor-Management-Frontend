@@ -25,7 +25,7 @@ const BlogCard = ({ blog }: { blog: IBlog }) => {
   };
 
   return (
-    <div className="group border border-pink-100 rounded-2xl  overflow-hidden">
+    <div className="group border  border-pink-100 rounded-2xl  overflow-hidden">
       <Link to={`/blogs/${slug}`}>
         <div className="relative ">
           <img
@@ -52,14 +52,14 @@ const BlogCard = ({ blog }: { blog: IBlog }) => {
             </h2>
 
             <p className="text-sm text-gray-600 leading-relaxed line-clamp-3">
-              {description}
+              {description.slice(0,80)}...
             </p>
           </div>
         </div>
       </Link>
 
       {/* Social Buttons */}
-      <div className="flex items-center border-t py-3 border-pink-100 justify-center text-sm bg-pink-50">
+      <div className="flex mt-auto items-center border-t py-3 border-pink-100 justify-center text-sm bg-pink-50">
         <div className="flex items-center gap-4">
           <button
             onClick={handleLike}

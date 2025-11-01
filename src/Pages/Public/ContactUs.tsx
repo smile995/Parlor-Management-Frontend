@@ -1,3 +1,4 @@
+import Footer from "../../Components/shared/Footer";
 import HeaderBanner from "../../Components/shared/HeaderBanner";
 import HeaderTitle from "../../Components/shared/HeaderTitle";
 import contact from "../../assets/images/contact.jpg";
@@ -134,6 +135,7 @@ const ContactUs = () => {
           className="rounded-xl shadow-md"
         ></iframe>
       </div>
+      <Footer/>
     </div>
   );
 };
