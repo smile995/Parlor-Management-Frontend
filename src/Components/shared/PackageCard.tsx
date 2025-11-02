@@ -61,7 +61,6 @@ const PackageCard = ({ comboPackage }: { comboPackage: IPackage }) => {
             )}
           </Typography>
           <Typography variant="body2" sx={{ color: "text.secondary" }}>
-            
             <div className="flex items-center gap-8 mt-2">
               <p className="flex items-center text-base font-semibold text-black">
                 <TbCurrencyTaka className="text-rose-500 text-xl" />
@@ -82,7 +81,9 @@ const PackageCard = ({ comboPackage }: { comboPackage: IPackage }) => {
         </CardContent>
         <Divider />
         <CardActions className="flex justify-between px-3 ">
-          <Button size="small">Book Now</Button>
+          <Link to={`/packages/booking/${_id}`}>
+            <Button size="small">Book Now</Button>
+          </Link>
           <Link to={`/packages/${_id}`}>
             <Button size="small">Details</Button>
           </Link>
