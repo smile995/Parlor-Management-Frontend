@@ -12,6 +12,7 @@ import Bookings from "../Pages/Customer/Bookings";
 import BlogDetails from "../Components/Blogs/BlogDetails";
 import PackageBooking from "../Pages/Public/PackageBooking";
 import ServiceBooking from "../Pages/Public/ServiceBooking";
+import PaymentPage from "../Pages/Public/PaymentPage";
 
 export const PublicRoutes = [
   {
@@ -53,6 +54,10 @@ export const PublicRoutes = [
   {
     path: "/our-team",
     element: <OurTeam />,
+  },
+  {
+    path: "/payment",
+    element: <PaymentPage />,
   },
 
 

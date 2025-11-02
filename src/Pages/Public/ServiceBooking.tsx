@@ -1,4 +1,4 @@
-import { useParams } from "react-router";
+import { Link, useParams } from "react-router";
 import { useServices } from "../../Hooks/useServices";
 import type { IService } from "../../Types";
 import Loading from "../../Components/ReUsable/Loading";
@@ -8,9 +8,8 @@ const ServiceBooking = () => {
   const { data, isLoading } = useServices();
   const allServices = data?.data as IService[];
   const service = allServices?.find((service) => service._id === id);
-  const { name, price,availableStaff } = service || {};
+  const { name, price, availableStaff } = service || {};
   console.log(availableStaff);
-  
 
   if (isLoading && !service) return <Loading />;
 
@@ -110,14 +109,14 @@ const ServiceBooking = () => {
           </label>
           <select className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-400 focus:border-pink-400 outline-none">
             <option value="">Select a staff</option>
-            {availableStaff?.map((staff,idx) => (
+            {availableStaff?.map((staff, idx) => (
               <option key={idx} value={staff}>
                 {staff}
               </option>
             ))}
           </select>
         </div>
-     
+
         {/* Additional Notes */}
         <div className="md:col-span-2 col-span-1">
           <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -132,12 +131,14 @@ const ServiceBooking = () => {
 
         {/* Submit Button */}
         <div className=" col-span-1 md:col-span-2">
-          <button
-            type="submit"
-            className="w-full  bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2.5 rounded-lg transition-all duration-200"
-          >
-            Confirm Booking
-          </button>
+          <Link to={"/payment"}>
+            <button
+              type="submit"
+              className="w-full  bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2.5 rounded-lg transition-all duration-200"
+            >
+              Confirm Booking
+            </button>
+          </Link>
         </div>
       </form>
     </div>
