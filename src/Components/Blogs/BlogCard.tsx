@@ -48,11 +48,11 @@ const BlogCard = ({ blog }: { blog: IBlog }) => {
             </div>
 
             <h2 className="text-lg font-semibold text-gray-800 mb-2 group-hover:text-pink-600 transition-colors line-clamp-2">
-              {title}
+              {title.slice(0,30)}...
             </h2>
 
             <p className="text-sm text-gray-600 leading-relaxed line-clamp-3">
-              {description.slice(0,80)}...
+              {description.slice(0,75)}...
             </p>
           </div>
         </div>
