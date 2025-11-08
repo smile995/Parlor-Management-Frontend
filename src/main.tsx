@@ -5,11 +5,15 @@ import "./index.css";
 import "./navlink.css";
 import { allRoutes } from "./Routers/Routes.tsx";
 import { RouterProvider } from "react-router/dom";
+import JerinProvider from "./Context/JerinProvider.tsx";
+
 const queryClient = new QueryClient();
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <RouterProvider router={allRoutes} />
-    </QueryClientProvider>
+    <JerinProvider>
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={allRoutes} />
+      </QueryClientProvider>
+    </JerinProvider>
   </StrictMode>
 );
