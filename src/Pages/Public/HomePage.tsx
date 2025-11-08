@@ -1,4 +1,3 @@
-
 import ContactForm from "../../Components/Home/ContactForm";
 import FAQ from "../../Components/Home/FAQ";
 import Quality from "../../Components/Home/Quality";
@@ -9,7 +8,11 @@ import Statistics from "../../Components/Home/Statistics";
 import Testimonials from "../../Components/Home/Testimonials";
 import Footer from "../../Components/shared/Footer";
 
+
+
 const HomePage = () => {
+
+  
   return (
     <div>
       <Slider />
