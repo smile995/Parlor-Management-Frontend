@@ -1,15 +1,22 @@
 import { FcGoogle } from "react-icons/fc";
 import { useJerinProvider } from "../../Hooks/useJerinProvider";
+import { useNavigate } from "react-router";
 
 // import { FaFacebook } from "react-icons/fa6";
 const SocialLogin = () => {
+  const navigate= useNavigate()
   const { googleLogin, setUser, setLoading } = useJerinProvider();
   const handleSigninWithGoogle = async () => {
     const result = await googleLogin();
     const user = result.user;
+    console.log(result);
+    console.log(user);
+    
+    
     if (user.email) {
       setUser(user);
       setLoading(false);
+      navigate("/")
     }
   };
   return (

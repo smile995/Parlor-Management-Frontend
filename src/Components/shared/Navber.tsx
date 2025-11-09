@@ -16,6 +16,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import logo from "../../assets/logo.png";
 import { Link, NavLink } from "react-router";
 import "../../index.css";
+import { useJerinProvider } from "../../Hooks/useJerinProvider";
 const Navber = () => {
   const PublicPage = [
     { label: "Home", link: "" },
@@ -24,8 +25,10 @@ const Navber = () => {
     { label: "Our Team", link: "our-team" },
     { label: "Contact Us", link: "contact-us" },
   ];
-  const role = "admin";
-  const user = true;
+  const role = "customer";
+  const { user, logout, setUser, setLoading } = useJerinProvider();
+  console.log(user);
+  
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
@@ -46,6 +49,11 @@ const Navber = () => {
 
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
+  };
+  const handleLogOut = async () => {
+    await logout();
+    setUser(null);
+    setLoading(false);
   };
   return (
     <div>
@@ -176,13 +184,13 @@ const Navber = () => {
                     </Link>
                   </MenuItem>
                   <MenuItem>
-                    <button>Logout</button>
+                    <button onClick={handleLogOut}>Logout</button>
                   </MenuItem>
                 </Menu>
               </Box>
             ) : (
               <Link to={"/login"}>
-                <button className="bg-blue-600 px-2 py-1 rounded font-semibold">
+                <button className="bg-[#f53d7a] px-2 py-1 rounded font-semibold">
                   Login
                 </button>
               </Link>

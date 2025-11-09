@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { JerinContext } from "./JerinContext";
 import {
   createUserWithEmailAndPassword,
@@ -7,6 +7,7 @@ import {
   signOut,GoogleAuthProvider,
   type User,
   type UserCredential,
+  onAuthStateChanged,
 } from "firebase/auth";
 import { auth } from "../assets/Configs/firebase";
 // import { GoogleAuthProvider } from "firebase/auth";
@@ -30,6 +31,8 @@ const JerinProvider: React.FC<{ children: React.ReactNode }> = ({
   // local state here
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
+  
+  
   // write functionality below
   const register = async (email: string, password: string) => {
     await createUserWithEmailAndPassword(auth, email, password);
@@ -42,32 +45,34 @@ const JerinProvider: React.FC<{ children: React.ReactNode }> = ({
     return result 
   };
   const logout = async () => {
-    await signOut(auth);
+    const result=await signOut(auth);
+    return result;
   };
 
-  //   useEffect(() => {
-  //     const unSubscribe = onAuthStateChanged(auth, (user) => {
-  //       setUser(user);
-  //       if (user) {
-  //         const userInfo = {
-  //           name: user.displayName,
-  //           email: user.email,
-  //         };
-  //         // issue a token
-  //         axiosInstance.post("/jwt", userInfo).then((res) => {
-  //           const token = res?.data?.token;
-  //           localStorage.setItem("access-token", token);
+    useEffect(() => {
+      const unSubscribe = onAuthStateChanged(auth, (user) => {
+        setUser(user);
+        if (user) {
+          setUser(user)
+          // const userInfo = {
+          //   name: user.displayName,
+          //   email: user.email,
+          // };
+          // issue a token
+          // axiosInstance.post("/jwt", userInfo).then((res) => {
+          //   const token = res?.data?.token;
+          //   localStorage.setItem("access-token", token);
 
-  //           setLoading(false);
-  //         });
-  //       } else {
-  //         // remove token
-  //         setLoading(false);
-  //         localStorage.removeItem("access-token");
-  //       }
-  //     });
-  //     return unSubscribe;
-  //   }, []);
+          //   setLoading(false);
+          // });
+        } else {
+          // remove token
+          setLoading(false);
+          // localStorage.removeItem("access-token");
+        }
+      });
+      return unSubscribe;
+    }, []);
 
   //   export global data from here
   const centralData = {
